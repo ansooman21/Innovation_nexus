@@ -17,10 +17,6 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
       // and an average car fuel efficiency of 25 miles per gallon
       carbonFootprint = milesDriven * (19.6 / 25);
     });
-    @override
-    Widget build(BuildContext context) {
-      return const Placeholder();
-    }
   }
 
   @override
