@@ -10,7 +10,7 @@ class CarbonFootprintApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Carbon Footprint Calculator',
+      title: 'Lipsa Priyadarshini Mohanty',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: CarbonFootprintScreen(),
     );
