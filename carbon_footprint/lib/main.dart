@@ -1,8 +1,6 @@
 import 'package:carbon_footprint/bottomBar/navigatorbar.dart';
 import 'package:flutter/material.dart';
 
-import 'Screens/home.dart';
-
 void main() {
   runApp(CarbonFootprintApp());
 }
