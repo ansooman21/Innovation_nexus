@@ -1,3 +1,4 @@
+import 'package:carbon_footprint/Screens/OnBoardingScreen/OnBoard.dart';
 import 'package:carbon_footprint/bottomBar/navigatorbar.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class CarbonFootprintApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Carbon Footprint Calculator',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: BottomNavigatorBar(),
+      home: OnBoardingScreen(),
     );
   }
 }
