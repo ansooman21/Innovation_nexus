@@ -9,16 +9,19 @@ class Intropage2 extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Padding(
+            padding: EdgeInsets.fromLTRB(40, 100, 50, 0),
+            child: Image.asset(
+              'assets/images/carbon2bg.png',
+              height: 200,
+            ),
+          ),
+          Padding(
             padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
             child: Text('REDUCE',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                style: TextStyle(fontSize: 30, color: Colors.green)),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 50, 50, 0),
-            child: Image.asset('assets/images/carbon2bg.png'),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 90, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 80, 20, 0),
             child: Text(
                 'Reusing our carbon footprint, stitching a greener path for the future.',
                 style: TextStyle(

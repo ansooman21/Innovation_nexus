@@ -1,3 +1,4 @@
+import 'package:carbon_footprint/bottomBar/navigatorbar.dart';
 import 'package:flutter/material.dart';
 
 class Intropage3 extends StatelessWidget {
@@ -9,16 +10,19 @@ class Intropage3 extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Padding(
+            padding: EdgeInsets.fromLTRB(40, 100, 50, 0),
+            child: Image.asset(
+              'assets/images/carbon3bg.png',
+              height: 200,
+            ),
+          ),
+          Padding(
             padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
             child: Text('REUSE',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                style: TextStyle(fontSize: 30, color: Colors.green)),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 50, 50, 0),
-            child: Image.asset('assets/images/carbon3bg.png'),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 120, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 80, 20, 0),
             child: Text('Reduce your footprint, lighten the Earth.',
                 style: TextStyle(
                   fontSize: 27,
@@ -26,7 +30,25 @@ class Intropage3 extends StatelessWidget {
                 )
                 //DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0),
                 ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(250, 110, 10, 0),
+            child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BottomNavigatorBar()),
+                );
+              },
+              child: Text(
+                "Done",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.green,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

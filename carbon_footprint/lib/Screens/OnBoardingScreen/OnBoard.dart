@@ -1,7 +1,7 @@
 import 'package:carbon_footprint/Screens/OnBoardingScreen/intro_page1.dart';
 import 'package:carbon_footprint/Screens/OnBoardingScreen/intro_page2.dart';
 import 'package:carbon_footprint/Screens/OnBoardingScreen/intro_page3.dart';
-import 'package:carbon_footprint/bottomBar/navigatorbar.dart';
+//import 'package:carbon_footprint/bottomBar/navigatorbar.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -35,7 +35,7 @@ class _start1State extends State<OnBoardingScreen> {
           //dot indicators
 
           Container(
-            alignment: Alignment(0, 0.87),
+            alignment: Alignment(0, 0.7),
             child: SmoothPageIndicator(controller: _controller, count: 3),
           ),
         ],

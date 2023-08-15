@@ -1,5 +1,5 @@
-import 'package:carbon_footprint/Screens/OnBoardingScreen/intro_page2.dart';
-import 'package:carbon_footprint/bottomBar/navigatorbar.dart';
+//import 'package:carbon_footprint/Screens/OnBoardingScreen/intro_page2.dart';
+//import 'package:carbon_footprint/bottomBar/navigatorbar.dart';
 import 'package:flutter/material.dart';
 
 class Intropage1 extends StatelessWidget {
@@ -11,13 +11,18 @@ class Intropage1 extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-            child: Text('WELCOME',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            padding: EdgeInsets.fromLTRB(40, 100, 50, 0),
+            child: Image.asset(
+              'assets/images/carbon1bg.png',
+              height: 200,
+            ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 50, 50, 0),
-            child: Image.asset('assets/images/carbon1bg.png'),
+            padding: const EdgeInsets.fromLTRB(10, 50, 10, 0),
+            child: Text(
+              'Welcome..',
+              style: TextStyle(fontSize: 30, color: Colors.green),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 80, 20, 0),
