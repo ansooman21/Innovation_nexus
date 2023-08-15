@@ -18,7 +18,7 @@ class Intropage2 extends StatelessWidget {
             child: Image.asset('assets/images/carbon2bg.png'),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(20, 120, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 90, 20, 0),
             child: Text(
                 'Reusing our carbon footprint, stitching a greener path for the future.',
                 style: TextStyle(
@@ -27,7 +27,7 @@ class Intropage2 extends StatelessWidget {
                 )
                 //DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0),
                 ),
-          )
+          ),
         ],
       ),
     );

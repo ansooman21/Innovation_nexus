@@ -1,3 +1,5 @@
+import 'package:carbon_footprint/Screens/OnBoardingScreen/intro_page2.dart';
+import 'package:carbon_footprint/bottomBar/navigatorbar.dart';
 import 'package:flutter/material.dart';
 
 class Intropage1 extends StatelessWidget {
@@ -26,7 +28,7 @@ class Intropage1 extends StatelessWidget {
                 )
                 //DefaultTextStyle.of(context).style.apply(fontSizeFactor: 2.0),
                 ),
-          )
+          ),
         ],
       ),
     );

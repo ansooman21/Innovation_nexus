@@ -23,63 +23,23 @@ class _start1State extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-      children: [
-        PageView(
-          controller: _controller,
-          children: [Intropage1(), Intropage2(), Intropage3()],
-        ),
-        //dot indicators
-        Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  _controller.jumpToPage(2);
-                },
-                child: Text(
-                  'Skip',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.green),
-                ),
-              ),
-              SmoothPageIndicator(controller: _controller, count: 3),
-
-              //next home page
-              onLastPage
-                  ? GestureDetector(
-                      onTap: () {
-                        _controller.nextPage(
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.easeIn,
-                        );
-                      },
-                      child: Text(
-                        'next',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                          color: Colors.black.withOpacity(0.5),
-                        ),
-                      ),
-                    )
-                  : GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return BottomNavigatorBar();
-                          }),
-                        );
-                      },
-                    ),
-            ],
+      body: Stack(
+        children: [
+          Container(
+            padding: EdgeInsets.only(bottom: 80),
+            child: PageView(
+              controller: _controller,
+              children: [Intropage1(), Intropage2(), Intropage3()],
+            ),
           ),
-        ),
-      ],
-    ));
+          //dot indicators
+
+          Container(
+            alignment: Alignment(0, 0.87),
+            child: SmoothPageIndicator(controller: _controller, count: 3),
+          ),
+        ],
+      ),
+    );
   }
 }
