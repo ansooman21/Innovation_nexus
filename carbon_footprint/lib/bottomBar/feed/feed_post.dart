@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class FeedPage extends StatelessWidget {
   final List<Map<String, dynamic>> posts = [
     {
-      'username': 'user1',
+      'username': 'ansooman',
       'imageUrl':
           'https://images.unsplash.com/photo-1484406566174-9da000fda645?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1889&q=80',
       'caption': 'Beautiful nature scene',
       'likes': 2,
     },
     {
-      'username': 'user2',
+      'username': 'abhisek',
       'imageUrl':
           'https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80',
       'caption': 'Cute animals!',
