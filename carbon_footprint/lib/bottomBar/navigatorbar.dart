@@ -15,20 +15,23 @@ class _BottomNavigatorBarState extends State<BottomNavigatorBar> {
   List<Widget> _screens = [
     CarbonFootprintScreen(),
     FeedPage(),
+
     // Add other screens here
   ];
+  onTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        onTap: onTapped,
         currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
+        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

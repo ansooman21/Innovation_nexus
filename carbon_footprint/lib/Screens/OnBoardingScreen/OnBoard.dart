@@ -1,6 +1,6 @@
-import 'package:carbon_footprint/Screens/OnBoardingScreen/intro_page1.dart';
-import 'package:carbon_footprint/Screens/OnBoardingScreen/intro_page2.dart';
-import 'package:carbon_footprint/Screens/OnBoardingScreen/intro_page3.dart';
+import 'package:carbon_footprint/Screens/OnBoardingScreen/intropage_1.dart';
+import 'package:carbon_footprint/Screens/OnBoardingScreen/intropage_2.dart';
+import 'package:carbon_footprint/Screens/OnBoardingScreen/intropage_3.dart';
 //import 'package:carbon_footprint/bottomBar/navigatorbar.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
