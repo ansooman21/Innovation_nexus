@@ -16,7 +16,7 @@ class _BottomNavigatorBarState extends State<BottomNavigatorBar> {
     CarbonFootprintScreen(),
     FeedPage(),
 
-    // Add other screens here
+    // Add other screens here ok
   ];
   onTapped(int index) {
     setState(() {
