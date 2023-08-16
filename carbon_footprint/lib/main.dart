@@ -10,7 +10,6 @@ class CarbonFootprintApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Carbon Footprint Calculator',
       theme: ThemeData(primarySwatch: Colors.green),
       home: OnBoardingScreen(),
