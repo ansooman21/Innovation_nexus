@@ -13,7 +13,6 @@ class FeedPage extends StatelessWidget {
         "Flutter is a UI toolkit from Google for building natively compiled applications..."),
     Article("State Management in Flutter",
         "State management is a crucial aspect of building complex applications in Flutter..."),
-    // Add more articles here
   ];
 
   @override
