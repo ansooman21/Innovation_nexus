@@ -23,6 +23,7 @@ class home_pageState extends State<home_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Carbon Footprint Calculator')),
+      backgroundColor: Colors.green,
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
