@@ -9,10 +9,6 @@ class Logopage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Carbon Footprint'),
-        backgroundColor: Colors.green, // Customize the color as needed
-      ),
       body: Container(
         padding: EdgeInsets.all(20.0),
         child: Column(
