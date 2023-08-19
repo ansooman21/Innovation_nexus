@@ -19,7 +19,7 @@ class Logopage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/carbon_footprint_logo.png', // Replace with your logo asset
+              'assets/images/carbon4.png', // Replace with your logo asset
               width: 150,
               height: 150,
             ),
