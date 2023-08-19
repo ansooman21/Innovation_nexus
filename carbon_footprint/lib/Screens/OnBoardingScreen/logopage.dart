@@ -17,8 +17,8 @@ class Logopage extends StatelessWidget {
           children: [
             Image.asset(
               'assets/images/carbon4.png', // Replace with your logo asset
-              width: 150,
-              height: 150,
+              width: 300,
+              height: 300,
             ),
             SizedBox(height: 20),
             Text(
