@@ -22,7 +22,7 @@ class Logopage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'Welcome to Carbon Footprint',
+              'Welcome to ECOTRACE',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
