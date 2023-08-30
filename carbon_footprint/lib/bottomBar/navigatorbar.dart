@@ -1,7 +1,7 @@
 import 'package:carbon_footprint/bottomBar/feed/feed_post.dart';
 import 'package:flutter/material.dart';
 
-import '../Screens/home.dart';
+import '../Screens/homescreen/home.dart';
 
 class BottomNavigatorBar extends StatefulWidget {
   const BottomNavigatorBar({super.key});
