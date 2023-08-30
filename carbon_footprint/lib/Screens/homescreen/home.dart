@@ -75,7 +75,7 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
                     ),
                     SizedBox(height: 12),
                     DropdownButton<String>(
-                      value: vehicleType,
+                      value: null,
                       onChanged: (value) {
                         setState(() {
                           vehicleType = value!;
@@ -142,7 +142,7 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
                     ),
                     SizedBox(height: 12),
                     DropdownButton<String>(
-                      value: foodType,
+                      value: null,
                       onChanged: (value) {
                         setState(() {
                           foodType = value!;
