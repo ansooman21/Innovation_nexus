@@ -54,7 +54,7 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Carbon Tracker'),
+        title: Text('Carbon Tracker App'),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
