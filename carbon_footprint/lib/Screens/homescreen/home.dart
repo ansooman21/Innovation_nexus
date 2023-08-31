@@ -25,8 +25,8 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
   double totalCO2 = 0.0;
   int totalCoins = 0;
 
-  String vehicleType = '';
-  double vehicleCO2 = 0.0;
+  double vehicleDistance = 0.0;
+  double vehicleCO2PerKm = 0.0;
   int vehicleCoins = 0;
 
   String foodType = '';
@@ -41,7 +41,7 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
       totalCO2 += co2;
       totalCoins += coins;
 
-      if (activityType == 'Car' || activityType == 'Bike') {
+      if (activityType == 'Vehicle') {
         calculatedVehicleCO2 += co2;
       } else if (activityType == 'Vegetarian' ||
           activityType == 'Non-Vegetarian') {
@@ -74,55 +74,34 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 12),
-                    DropdownButton<String>(
-                      value: null,
+                    TextFormField(
                       onChanged: (value) {
-                        setState(() {
-                          vehicleType = value!;
-                          if (value == 'Car') {
-                            vehicleCO2 = 2.0;
-                            vehicleCoins = 5;
-                          } else {
-                            vehicleCO2 = 0.0;
-                            vehicleCoins = 0;
-                          }
-                        });
+                        vehicleDistance = double.tryParse(value) ?? 0.0;
                       },
-                      items: ['None', 'Car', 'Bike']
-                          .map<DropdownMenuItem<String>>(
-                            (value) => DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            ),
-                          )
-                          .toList(),
+                      keyboardType:
+                          TextInputType.numberWithOptions(decimal: true),
+                      decoration:
+                          InputDecoration(labelText: 'Distance Traveled (km)'),
                     ),
-                    if (vehicleType != 'None')
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          TextFormField(
-                            onChanged: (value) {
-                              vehicleCO2 = double.tryParse(value) ?? 0.0;
-                            },
-                            keyboardType:
-                                TextInputType.numberWithOptions(decimal: true),
-                            decoration: InputDecoration(
-                                labelText: 'CO2 Emissions (kg)'),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              if (vehicleType.isNotEmpty && vehicleCO2 > 0) {
-                                addActivity(
-                                    vehicleType, vehicleCO2, vehicleCoins);
-                              }
-                            },
-                            style:
-                                ElevatedButton.styleFrom(primary: Colors.green),
-                            child: Text('Add'),
-                          ),
-                        ],
-                      ),
+                    TextFormField(
+                      onChanged: (value) {
+                        vehicleCO2PerKm = double.tryParse(value) ?? 0.0;
+                      },
+                      keyboardType:
+                          TextInputType.numberWithOptions(decimal: true),
+                      decoration: InputDecoration(
+                          labelText: 'CO2 Emissions per km (kg)'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        double emissions = vehicleDistance * vehicleCO2PerKm;
+                        if (emissions > 0) {
+                          addActivity('Vehicle', emissions, vehicleCoins);
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(primary: Colors.green),
+                      child: Text('Add'),
+                    ),
                   ],
                 ),
               ),
@@ -141,28 +120,32 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 12),
-                    DropdownButton<String>(
-                      value: null,
-                      onChanged: (value) {
-                        setState(() {
-                          foodType = value!;
-                          if (value == 'Vegetarian') {
-                            foodCO2 = 2.0;
-                            foodCoins = 5;
-                          } else {
-                            foodCO2 = 0.0;
-                            foodCoins = 0;
-                          }
-                        });
+                    StatefulBuilder(
+                      builder: (BuildContext context, StateSetter setState) {
+                        return DropdownButton<String>(
+                          value: null,
+                          onChanged: (value) {
+                            setState(() {
+                              foodType = value!;
+                              if (value == 'Vegetarian') {
+                                foodCO2 = 2.0;
+                                foodCoins = 5;
+                              } else {
+                                foodCO2 = 0.0;
+                                foodCoins = 0;
+                              }
+                            });
+                          },
+                          items: ['None', 'Vegetarian', 'Non-Vegetarian']
+                              .map<DropdownMenuItem<String>>(
+                                (value) => DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                ),
+                              )
+                              .toList(),
+                        );
                       },
-                      items: ['None', 'Vegetarian', 'Non-Vegetarian']
-                          .map<DropdownMenuItem<String>>(
-                            (value) => DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            ),
-                          )
-                          .toList(),
                     ),
                     if (foodType != 'None')
                       Column(
@@ -226,6 +209,17 @@ class _CarbonFootprintScreenState extends State<CarbonFootprintScreen> {
                 );
               },
               child: Text('View Total Coins Earned'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  calculatedVehicleCO2 = 0.0;
+                  calculatedFoodCO2 = 0.0;
+                });
+              },
+              style: ElevatedButton.styleFrom(primary: Colors.green),
+              child: Text('Reset Calculated Emissions'),
             ),
           ],
         ),

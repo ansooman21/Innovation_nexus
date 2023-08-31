@@ -119,9 +119,11 @@ class ArticleDetailPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(article.title),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Text(article.content),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Text(article.content),
+        ),
       ),
     );
   }
